@@ -1,0 +1,32 @@
+{
+  "name": "birthday-select",
+  "version": "1.0.0",
+  "description": "Simple plugin to select birthday",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/just-den/birthday-select.git"
+  },
+  "keywords": [
+    "select",
+    "date"
+  ],
+  "author": "Just Den",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/just-den/birthday-select/issues"
+  },
+  "homepage": "https://github.com/just-den/birthday-select#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
+  }
+}
