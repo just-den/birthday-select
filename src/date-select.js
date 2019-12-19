@@ -1,7 +1,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * *
  * birthday-select.js v1.0.0
  * https://github.com/just-den/birthday-select.git
- * Albine ( Denis Zatishnyi ) (c) 2019
+ * Denis Zatishnyi (c) 2019
  * * * * * * * * * * * * * * * * * * * * * * */
 
 (function (root, factory) {
