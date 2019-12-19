@@ -45,7 +45,7 @@ Simple plugin to select birthday
 
 
 ## IE Support
->= 10
+=> 10
 </br>
 
 
