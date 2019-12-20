@@ -72,14 +72,18 @@
 		settings.days = days
 	}
 
-	const daysLayout = () => {
-		let selectDay = `<option selected disabled value="">Day</option>`
-		let val = ''
+	const daysLayout = (select) => {
+		removeChildren(select)
+		const first = new Option('Day','',true,true)
+		first.disabled = 'disabled'
+		select.add(first)
 		settings.days.forEach((day)=>{
-			const disabled = day.disabled ? 'disabled="disabled"' : ''
-			selectDay += `<option value="${day.index}" ${disabled}>${day.index}</option>`
-		})
-		return selectDay
+			const option = new Option(day.index,day.index)
+			if( day.disabled ){
+				option.disabled = 'disabled'
+			}
+			select.add(option)
+		})	
 	}
 
 	const monthsInit = (disabledDataArray) => {
@@ -103,13 +107,18 @@
 		settings.months = months		
 	}
 
-	const monthsLayout = () => {
-		let selectMonth = `<option selected disabled value="">Month</option>`
+	const monthsLayout = (select) => {
+		removeChildren(select)
+		const first = new Option('Month','',true,true)
+		first.disabled = 'disabled'
+		select.add(first)
 		settings.months.forEach((month)=>{
-			const disabled = month.disabled ? 'disabled="disabled"' : ''
-			selectMonth += `<option value="${month.index}" ${disabled}>${month.name}</option>`
-		})
-		return selectMonth
+			const option = new Option(month.name,month.index)
+			if( month.disabled ){
+				option.disabled = 'disabled'
+			}
+			select.add(option)
+		})		
 	}
 
 	const yearsInit = (leap) => {
@@ -131,18 +140,27 @@
 		settings.years = years
 	}
 
-	const yearsLayout = () => {
-		let selectYears = `<option selected disabled value="">Year</option>`
+	const yearsLayout = (select) => {
+		removeChildren(select)
+		const first = new Option('Month','',true,true)
+		first.disabled = 'disabled'
+		select.add(first)
 		settings.years.forEach((year)=>{
-			const disabled = year.disabled ? 'disabled="disabled"' : ''
-			selectYears += `<option value="${year.index}" ${disabled}>${year.index}</option>`
-		})
-		return selectYears
+			const option = new Option(year.index,year.index)
+			if( year.disabled ){
+				option.disabled = 'disabled'
+			}
+			select.add(option)
+		})	
 	}
 
 	const uniqueId = ()  => ( '_' + Math.random().toString(36).substr(2, 9)	)	
 
-
+	const removeChildren = (el) => {
+		while (el.firstChild) {	
+		  el.removeChild(el.firstChild);	
+		}	
+	}
 
 	const setSettings = (options) => {
 		if(typeof options === 'object'){
@@ -171,34 +189,34 @@
 				const id = document.querySelector(settings.id)
 
 				const selectDay = document.createElement('select')
-				selectDay.innerHTML = daysLayout()
+				daysLayout(selectDay)
 				selectDay.addEventListener('change',(e)=>{
 					const _this = e.currentTarget
 					if( _this.value >='1' && _this.value <='29' ){
 						monthsInit(null)
 					}else if( _this.value === '30' ){
 						const disabled = ['02']
-						selectMonth.innerHTML = monthsLayout()
+						monthsLayout(selectMonth)
 					}else if( _this.value === '31' ){
 						const disabled = ['02','04','06','09','11']
 						monthsInit(disabled)											
 					}
-					selectMonth.innerHTML = monthsLayout()	
+					monthsLayout(selectMonth)	
 				},false)
 
 				const selectMonth = document.createElement('select')
-				selectMonth.innerHTML = monthsLayout()
+				monthsLayout(selectMonth)
 				selectMonth.addEventListener('change',(e)=>{
 					const _this = e.currentTarget
 					yearsInit(null)					
 					if(selectDay.selectedIndex === 29 && _this.value === '02'){
 						yearsInit('leap')
 					}					
-					selectYear.innerHTML = yearsLayout()
+					yearsLayout(selectYear)
 				},false)
 
 				const selectYear = document.createElement('select')
-				selectYear.innerHTML = yearsLayout()
+				yearsLayout(selectYear)
 
 				if( settings.labels && settings.labels.length > 0 || settings.bootstrap ){
 					const wrapperDay = document.createElement('div')
