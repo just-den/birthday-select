@@ -1,27 +1,22 @@
 Simple plugin to select birthday
 
 
-## Initialization
-
-
-</br>
-
-
-```html
-
-```
 </br>
 
 
 ## Basic usage
 
 ```html
-
+<script src="dist/birthday-select.min.js"></script>
 ```
 
 ```js
+var firstSelect = new dateSelect({
+  id: '#dateSelect-1',
+  lang: "de"
+});
 
-
+firstSelect.init();
 ```
 <h3>
 	<a href="#" target="_blank">Demo</a>
@@ -39,7 +34,7 @@ Simple plugin to select birthday
 | minYear           | 1900                | number  
 | maxYear           | this year           | number  
 | bootstrap         | false               | true  
-| labels            | []                  | ['label1','label2','label3']  
+| labels            | []                  | ['label-1-name ','label-2-name','label-3-name']  
 
 </br>
 

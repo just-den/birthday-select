@@ -8,11 +8,10 @@ const babel = require('gulp-babel');
                                         
     
 function jsTask(){                  
-    return src([    
-        'node_modules/@babel/polyfill/dist/polyfill.min.js',                
-        'src/date-select.js',      
+    return src([                   
+        'src/birthday-select.js',      
         ])
-        .pipe(concat('date-select.min.js'))                
+        .pipe(concat('birthday-select.min.js'))                
         .pipe(babel({
             "presets": ["@babel/preset-env"]
         }))                 
