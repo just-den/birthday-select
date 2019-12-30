@@ -6,6 +6,12 @@ Simple plugin to select birthday
 
 ## Basic usage
 
+```
+npm install
+```
+
+or
+
 ```html
 <script src="dist/birthday-select.min.js"></script>
 ```

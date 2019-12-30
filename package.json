@@ -1,8 +1,8 @@
 {
   "name": "birthday-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple plugin to select birthday",
-  "main": "dist/date-select.min.js",
+  "main": "dist/birthday-select.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
