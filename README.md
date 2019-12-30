@@ -10,8 +10,6 @@ Simple plugin to select birthday
 npm install birthday-select
 ```
 
-or
-
 ```html
 <script src="dist/birthday-select.min.js"></script>
 ```
