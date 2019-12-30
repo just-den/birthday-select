@@ -7,7 +7,7 @@ Simple plugin to select birthday
 ## Basic usage
 
 ```
-npm install
+npm install birthday-select
 ```
 
 or
