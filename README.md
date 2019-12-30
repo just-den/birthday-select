@@ -19,7 +19,7 @@ var firstSelect = new dateSelect({
 firstSelect.init();
 ```
 <h3>
-	<a href="#" target="_blank">Demo</a>
+	<a href="https://demo.webexp.site/birthday-select/" target="_blank">Demo</a>
 </h3>
 </br>
 

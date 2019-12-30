@@ -269,7 +269,7 @@
     }
 
      /**
-     * Days data initialization
+     * Months data initialization
      * @private
      * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( month is unavailable ) 
      */ 
@@ -296,7 +296,7 @@
     }
 
      /**
-     * Insert month data in DOM element
+     * Insert months data in DOM element
      * @private
      * @param {Object} select DOM element
      */ 
@@ -315,7 +315,7 @@
     }
 
      /**
-     * Days data initialization
+     * Years data initialization
      * @private
      * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( year is unavailable ) 
      */ 
@@ -339,7 +339,7 @@
     }
 
      /**
-     * Insert year data in DOM element
+     * Insert years data in DOM element
      * @private
      * @param {Object} select DOM element
      */ 
