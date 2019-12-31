@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * *
- * birthday-select.js v1.0.0
+ * birthday-select.js v1.0.3
  * https://github.com/just-den/birthday-select.git
  * Denis Zatishnyi (c) 2019
  * * * * * * * * * * * * * * * * * * * * * * */
