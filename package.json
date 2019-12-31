@@ -4,7 +4,10 @@
   "description": "Simple plugin to select birthday",
   "main": "dist/birthday-select.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "watch": "cross-env NODE_ENV=development webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -20,13 +23,13 @@
     "url": "https://github.com/just-den/birthday-select/issues"
   },
   "homepage": "https://github.com/just-den/birthday-select#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.7.7",
-    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.7",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.2"
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

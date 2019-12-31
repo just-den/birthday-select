@@ -11,12 +11,14 @@ npm install birthday-select
 ```
 
 ```html
+<form id="birthdaySelect1"></form>
+
 <script src="dist/birthday-select.min.js"></script>
 ```
 
 ```js
-var firstSelect = new dateSelect({
-  id: '#dateSelect-1',
+var firstSelect = new birthdaySelect({
+  id: '#birthdaySelect1',
   lang: "de"
 });
 

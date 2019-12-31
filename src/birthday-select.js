@@ -3,22 +3,18 @@
  * https://github.com/just-den/birthday-select.git
  * Denis Zatishnyi (c) 2019
  * * * * * * * * * * * * * * * * * * * * * * */
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define([], factory(root));
-    } else if (typeof exports === 'object') {
-        module.exports = factory(root);
-    } else {
-        root.dateSelect = factory(root);
-    }
-})(typeof global !== 'undefined' ? global : window || this.window || this.global, function(root) {
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = global || self, global.birthdaySelect = factory());
+}(this, function () { 'use strict';
 
     /**
      * constructor
      * @private
      * @param {Object} options User options
      */
-    const $dateSelect = function(options) {
+    const birthdaySelect = function(options) {
         this.settings = extend(baseSettings, getSettings(options))
     }
 
@@ -401,7 +397,7 @@
      * Initialization new instance of a plugin object ( fro new DOM element )
      * @public
      */
-    $dateSelect.prototype.init = function() {
+    birthdaySelect.prototype.init = function() {
 
         daysInit.call(this, null)
         monthsInit.call(this, null)
@@ -519,5 +515,10 @@
 
     }
 
-    return $dateSelect;
-});
+    if (typeof window !== "undefined") {
+        window.birthdaySelect = birthdaySelect
+    }
+
+    return birthdaySelect
+
+}));
