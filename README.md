@@ -40,7 +40,8 @@ firstSelect.init();
 | minYear           | 1900                | number  
 | maxYear           | this year           | number  
 | bootstrap         | false               | true  
-| labels            | []                  | ['label-1-name ','label-2-name','label-3-name']  
+| labels            | []                  | ['label-1-name ','label-2-name','label-3-name'] 
+| lang              | "en"                | "ru", "de"
 
 </br>
 
