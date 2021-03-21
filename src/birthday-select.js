@@ -220,8 +220,8 @@
      /**
      * Days data initialization
      * @private
-     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( day is unavailable ) 
-     */   
+     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( day is unavailable )
+     */
     function daysInit(disabledDataArray) {
         let days = []
         for (let i = 1; i <= 31; i++) {
@@ -249,7 +249,7 @@
      * Insert days data in DOM element
      * @private
      * @param {Object} select DOM element
-     */ 
+     */
     function daysLayout(select) {
         removeChildren(select)
         const first = new Option(this.settings.day, '', true, true)
@@ -267,8 +267,8 @@
      /**
      * Months data initialization
      * @private
-     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( month is unavailable ) 
-     */ 
+     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( month is unavailable )
+     */
     function monthsInit(disabledDataArray) {
         let months = []
 
@@ -295,7 +295,7 @@
      * Insert months data in DOM element
      * @private
      * @param {Object} select DOM element
-     */ 
+     */
     function monthsLayout(select) {
         removeChildren(select)
         const first = new Option(this.settings.month, '', true, true)
@@ -313,8 +313,8 @@
      /**
      * Years data initialization
      * @private
-     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( year is unavailable ) 
-     */ 
+     * @param {Object/Boolean/String} disabledDataArray Set option DOM element is disabled ( year is unavailable )
+     */
     function yearsInit(leap) {
         const start = Number(this.settings.minYear)
         const end = Number(this.settings.maxYear)
@@ -338,7 +338,7 @@
      * Insert years data in DOM element
      * @private
      * @param {Object} select DOM element
-     */ 
+     */
     function yearsLayout(select) {
         removeChildren(select)
         const first = new Option(this.settings.year, '', true, true)
@@ -357,7 +357,7 @@
      * Unique Id
      * @private
      * @returns {String} Returns pseudo unique id
-     */ 
+     */
     const uniqueId = () => ('_' + Math.random().toString(36).substr(2, 9))
 
     const removeChildren = (el) => {
@@ -371,7 +371,7 @@
      * @private
      * @param {Object} options Users settings
      * @returns {Object} New plugin settings
-     */ 
+     */
     function setSettings(options) {
         if (typeof options === 'object') {
             for (let prop in options) {
@@ -388,7 +388,7 @@
      * @private
      * @param {Object} options Users settings
      * @returns {Object} New plugin settings
-     */ 
+     */
     function getSettings(options) {
         return setSettings(options)
     }
@@ -413,22 +413,21 @@
                     this.settings.year = local[this.settings.lang]["base"]["year"]
                     this.settings.months = local[this.settings.lang]["month"]
                 }
-                console.log('this.settings.month: ', this.settings.month)
                 const id = document.querySelector(this.settings.id)
 
                 const selectDay = document.createElement('select')
-                console.log('selectDay: ',typeof selectDay)
                 daysLayout.call(this, selectDay)
                 selectDay.addEventListener('change', (e) => {
 
                     const _this = e.currentTarget
-                    if (_this.value >= '1' && _this.value <= '29') {
+                    var processed_val = parseInt(_this.value)
+                    if (processed_val >= '1' && processed_val <= '29') {
 
                         monthsInit.call(this, null)
-                    } else if (_this.value === '30') {
+                    } else if (processed_val == '30') {
                         const disabled = ['02']
-                        monthsLayout.call(this, selectMonth)
-                    } else if (_this.value === '31') {
+                        monthsInit.call(this, disabled)
+                    } else if (processed_val == '31') {
                         const disabled = ['02', '04', '06', '09', '11']
                         monthsInit.call(this, disabled)
                     }
